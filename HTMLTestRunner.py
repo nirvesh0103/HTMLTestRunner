@@ -93,13 +93,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # URL: http://tungwaiyip.info/software/HTMLTestRunner.html
 
 
-__author__ = "Nirvesh Priyadarshi"
-__version__ = "0.8.4"
+__author__ = "Wai Yip Tung"
+__version__ = "1.0.0"
 
 
 """
 Change History
-Version 0.8.4
+Version 1.0.0
 * Added test execution time and test success rate.
 
 Version 0.8.3 
