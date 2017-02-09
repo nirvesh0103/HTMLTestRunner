@@ -1,4 +1,4 @@
-﻿"""
+"""
 A TestRunner for use with the Python unit testing framework. It
 generates a HTML report to show the result at a glance.
 
@@ -93,13 +93,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # URL: http://tungwaiyip.info/software/HTMLTestRunner.html
 
 
-__author__ = "Wai Yip Tung"
-__version__ = "1.0.0"
+__author__ = "Nirvesh Priyadarshi"
+__version__ = "0.8.4"
 
 
 """
 Change History
-Version 1.0.0
+Version 0.8.4
 * Added test execution time and test success rate.
 
 Version 0.8.3 
@@ -596,7 +596,7 @@ box-shadow:0 3px 0 #08c inset;
 </div>
 </div>
 
-""" # variables: (title, parameters, description, tversion)
+""" # variables: (title, parameters, description)
 
     HEADING_ATTRIBUTE_TMPL = """<li class='attribute'><strong>%(name)s:</strong> %(value)s</li>
 """ # variables: (name, value)
@@ -968,7 +968,7 @@ class HTMLTestRunner(Template_mixin):
         return [('Application Versions', appVersion),]
 
     def generateReport(self, test, result):
-        report_attrs = self.getReportAttributes(result, tversion)
+        report_attrs = self.getReportAttributes(result)
         app_attrs = self.getAppAttributes()
         generator = 'HTMLTestRunner %s' % __version__
         stylesheet = self._generate_stylesheet()
@@ -1050,7 +1050,7 @@ class HTMLTestRunner(Template_mixin):
             rows.append(row)
 
             for tid, (n,t,o,e,p,tt,tg) in enumerate(cls_results):
-                self._generate_report_test(rows, cid, tid, n, t, o, e, p,tt,tg)
+                self._generate_report_test(rows, cid, tid, n, t, o, e, p,tt, tg)
 
         report = self.REPORT_TMPL % dict(
             test_list = ''.join(rows),
