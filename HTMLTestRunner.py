@@ -475,7 +475,6 @@ a{
 .report-meta{
     color:#08c
     width: 100%;
-    height: 36px;
     background-color: #EEE;
     background-repeat: repeat-x;
     background-image: -moz-linear-gradient(top, #F5F5F5 0%, #EEE 100%);
