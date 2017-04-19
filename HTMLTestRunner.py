@@ -503,7 +503,6 @@ a{
     padding: 0 10px 0 0;
     float: left;
     border-right: 1px solid #E5E5E5;
-    line-height: 36px;
     color: #4682B4;
     
 }
