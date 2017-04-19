@@ -8,3 +8,6 @@ By using this file you can .
   4. Screenshot of failed tests. (Pass screenshot name and location from run test runner.py)
   5. Add application version. (Pass application version from run_testRunner.py)
 In your unit test report.
+
+# Contriubtors
+Way Yip Tung - https://github.com/tungwaiyip
