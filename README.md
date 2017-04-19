@@ -9,5 +9,5 @@ By using this file you can .
   5. Add application version. (Pass application version from run_testRunner.py)
 In your unit test report.
 
-# Contriubtors
+# Contributors
 Way Yip Tung - https://github.com/tungwaiyip
