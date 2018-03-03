@@ -1,4 +1,4 @@
-from External_lib import HTMLTestRunner
+import HTMLTestRunner
 import unittest
 from unittest import TestLoader
 from Test_Package_2 import *
