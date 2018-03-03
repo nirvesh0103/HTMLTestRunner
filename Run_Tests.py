@@ -13,8 +13,6 @@ class run_tests(object):
         loader = TestLoader()
         suite = unittest.TestSuite()
 
-        # print(loader.discover("*", 'test*.py'))
-
         print(loader.loadTestsFromModule(test_calculator))
         print(loader.loadTestsFromModule(test_primenumbers))
 
