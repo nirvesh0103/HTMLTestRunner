@@ -503,7 +503,10 @@ a{
     padding: 0 10px 0 0;
     float: left;
     border-right: 1px solid #E5E5E5;
+    line-height: 36px;
     color: #4682B4;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 100%;
     
 }
 .report-meta li:last-child {
@@ -524,7 +527,7 @@ a{
     background: #FFF;
     padding: 20px;
     border-radius: 2px;
-    width: 100%;
+    width: 98%;
 }
 .result_text{
     overflow:show;
@@ -902,21 +905,23 @@ class HTMLTestRunner(Template_mixin):
         ct= "0:00:00.000000"
         ct = datetime.datetime.strptime(ct,"%H:%M:%S.%f")
         tg = datetime.timedelta(minutes=ct.minute, seconds=ct.second, microseconds=ct.microsecond)
-        currentClass = ""
+        current_class = ""
         for n,t,o,e,p,tt in result_list:
             cls = t.__class__
             if  cls not in rmap:
                 rmap[cls] = []
                 classes.append(cls)
+            if tt == "0:00:00":
+                tt = "0:00:00.000000"
             testT = datetime.datetime.strptime(tt,"%H:%M:%S.%f")
             testTD = datetime.timedelta(minutes=testT.minute, seconds=testT.second, microseconds=testT.microsecond)
-            if currentClass != cls:
-                currentClass = cls
+            if current_class != cls:
+                current_class = cls
                 tg = datetime.timedelta(minutes=ct.minute, seconds=ct.second, microseconds=ct.microsecond)
                 tg = tg + testTD
             else:
                 tg = tg + testTD
-            rmap[cls].append((n,t,o,e,p,tt,tg))
+            rmap[cls].append((n, t, o, e, p, tt, tg))
             
         r = [(cls, rmap[cls]) for cls in classes]
         return r
@@ -942,7 +947,7 @@ class HTMLTestRunner(Template_mixin):
             totalCount = totalCount + result.error_count
         # Added test Success Rate by Nirvesh Priyadarshi
         successRate = round((result.success_count/totalCount) * 100, 2)
-        print( type(successRate), successRate)
+        print("Success Rate:", successRate)
         successRate = str(successRate) + "%"
         status.append('Success Rate: %s' % successRate)
         if status:
